@@ -11,6 +11,7 @@ import { MaterialModule } from '../material/material.module';
 import { CardHeroComponent } from './components/card-hero/card-hero.component';
 import { imagenPipe } from './pipes/img.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DialogComponent } from './components/card-hero/dialog/dialog.component';
 
 
 
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NewHeroPageComponent,
     SearchPageComponent,
     CardHeroComponent,
-    imagenPipe
+    imagenPipe,
+    DialogComponent
   ],
   imports: [
     CommonModule,

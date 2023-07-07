@@ -3,6 +3,8 @@ import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../interfaces/hero.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { delay, switchMap } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../components/card-hero/dialog/dialog.component';
 
 @Component({
   selector: 'app-hero-page',
@@ -16,7 +18,8 @@ export class HeroPageComponent implements OnInit{
 
   constructor(private heroService: HeroService,
     private activatedRoute: ActivatedRoute,
-    private router:Router){}
+    private router:Router,
+    public dialog: MatDialog){}
 
   goBack():void{
     this.router.navigateByUrl("/heros/list")
@@ -43,4 +46,7 @@ export class HeroPageComponent implements OnInit{
   //tengo el id... como era la forma clasica de hacerlo? rellenando una variable vacía y  de ahí mostrar la info?
   //ver como era en el otro componente que también hace peticiones... ahora se aprende con swtichmap 
   
+
+
+
 }

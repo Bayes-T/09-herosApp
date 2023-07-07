@@ -37,7 +37,7 @@ export class HeroService {
 
   updateHero(hero: Hero):Observable<Hero>{
     if (!hero.id) throw Error('El id del héroe es requerido')
-    return this.http.patch<Hero>(`${this.baseURL}/${hero.id}`, hero)
+    return this.http.patch<Hero>(`${this.baseURL}/heroes/${hero.id}`, hero)
   }
 
   //estoy borrando, no devuelve un heroe sino si se borro o no (booleano)

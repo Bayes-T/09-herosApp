@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Borrar componente</h1>
+<div mat-dialog-content>
+  <p>¿Estás seguro de que deseas borrar el componente?</p>
+</div>
+<div mat-dialog-actions>
+  <button 
+  color="primary"
+  mat-button (click)="onNoClick()">No Thanks</button>
+  <span class="spacer"></span>
+  <button 
+  color="warn"
+  mat-button (click)="onConfirm()">Ok</button>
+</div>
