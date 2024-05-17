@@ -107,7 +107,10 @@ export class NewHeroPageComponent  implements OnInit{
     const dialogRef = this.dialog.open(DialogComponent, { data : this.heroForm.value})
 
 
-    //esto es lo que pasa al hacerle click a ok borrar, lo demas pasa el en componente, tanto en ts como en el html
+    //esto es lo que pasa al hacerle click a ok borrar, lo demas pasa el en component
+
+    //CREO QUE EL AFTERCLOSED utiliza el método del service delete, porque está suscribiéndose a un booleano que emite true o false, como el método. Y CREO QUE TOMA EL VALOR DEL DIALOGREF, PUES ESTE TOMA LA DATA DE HEROFORM Y CREO QUE ÉSTE A SU VEZ DEPENDE DE SI BORRAMOS O NO. QUÉ DEVOLVERÍA HEROFORM VALUE? QUÉ VALORES TOMA CONST DIALOGREF?
+
     dialogRef.afterClosed().subscribe(result => {
       if(!result) return
       this.heroService.getHeroById(this.currentHero.id)
@@ -121,3 +124,5 @@ export class NewHeroPageComponent  implements OnInit{
     })
 
 }}
+
+

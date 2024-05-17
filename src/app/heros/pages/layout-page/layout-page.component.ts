@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from 'src/app/auth/interfaces/user.interface';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-layout-page',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
   ]
 })
 export class LayoutPageComponent {
+
+  constructor(private authService: AuthService){}
 
   //ojo con el url, es con path relativo a donde estoy, salgo y entro de una a lsit
   //y esto se podria hacer con routerlink? es propio de primeflex o de material?
@@ -17,4 +21,12 @@ export class LayoutPageComponent {
     {label: "Añadir", icon: "add", url: "./new"},
     {label: "Buscar", icon: "search", url: "./search"}
   ]
+
+  get currentUser():User | undefined {
+    return this.authService.currentUser
+  }
+
+  onLogout(){
+    this.authService.logout()
+  }
 }

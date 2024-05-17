@@ -5,6 +5,7 @@ import { NewHeroPageComponent } from './pages/new-hero-page/new-hero-page.compon
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { HeroPageComponent } from './pages/hero-page/hero-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
+import { publicGuard } from '../auth/guards/public.guard';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
       {path: "new", component: NewHeroPageComponent},
       {path: "search", component: SearchPageComponent},
       {path: "edit/:id", component: NewHeroPageComponent},
-      {path: "list", component: ListPageComponent},
+      {path: "list", component: ListPageComponent,     canActivate: [ ],
+      canMatch: [ ]},
       {path: ":id", component: HeroPageComponent},
       //cualquier path no reconocido dentro de hero, me va a llevar aca, a list, incluido el hero solo, podria hacer que señale a una página de inicio mejor :)
       {path: "**", redirectTo: "list"},
